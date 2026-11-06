@@ -29,6 +29,7 @@ Backend: FastAPI + pandas (Python 3.11+). Frontend: Next.js (App Router) + TypeS
 ## Project conventions
 - Backend in ./backend, frontend in ./frontend.
 - All API routes under /api. Backend runs on port 8000, frontend on 3000.
+- CORS (`backend/app/main.py`): any `http://localhost`/`127.0.0.1` port, plus exact public origins in `PUBLIC_ORIGINS` (currently the ngrok demo URL) and any in the `CORS_ORIGINS` env var (comma-separated). Tested in `backend/tests/test_cors.py`.
 - Load all CSVs ONCE at startup into a cached data store; never re-read files per request.
 - Every API response that feeds a chart includes a "source" string: "NYISO real-time zonal LBMP & Moses South interface flow, Jan 2023 – Dec 2025".
 - Round money values to 2 decimals in API responses.

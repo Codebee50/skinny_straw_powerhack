@@ -1,5 +1,7 @@
 # NYISO Grid Congestion Dashboard
 
+**Live demo:** https://womanless-gravitate-expensive.ngrok-free.dev
+
 Interactive dashboard analyzing New York electricity grid congestion prices (NYISO, Jan 2023 – Dec 2025).
 
 - **Backend:** FastAPI + pandas (`./backend`, port 8000, all routes under `/api`)

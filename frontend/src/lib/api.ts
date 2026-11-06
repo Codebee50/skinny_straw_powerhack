@@ -7,7 +7,14 @@ import type {
   Year,
 } from "./types";
 
-export const API_URL = (process.env.NEXT_PUBLIC_API_URL ?? "http://localhost:8000").replace(/\/$/, "");
+/**
+ * Base URL for API calls. Default "" = same origin: the browser calls this website's /api/*, which
+ * next.config.ts proxies to the backend (BACKEND_URL, default http://127.0.0.1:8000). That way a
+ * single public URL (e.g. ngrok to port 3000) gets live data. Set NEXT_PUBLIC_API_URL to call a
+ * backend directly instead (it must then allow this site's origin in CORS).
+ */
+export const API_URL = (process.env.NEXT_PUBLIC_API_URL ?? "").replace(/\/$/, "");
+const API_LABEL = API_URL || "this site's /api proxy";
 
 export const DATA_SOURCE =
   "NYISO real-time zonal LBMP & Moses South interface flow, Jan 2023 – Dec 2025";
@@ -65,7 +72,7 @@ async function liveGet<T>(path: string, init?: RequestInit): Promise<T> {
     });
   } catch {
     const reason = timeout.aborted ? `didn't respond within ${LIVE_TIMEOUT_MS / 1000}s` : "isn't reachable";
-    throw new ApiError(`The API at ${API_URL} ${reason}. Is the backend running on port 8000?`, null);
+    throw new ApiError(`The API (${API_LABEL}) ${reason}. Is the backend running on port 8000?`, null);
   }
   if (!res.ok) {
     const detail = await res.text().catch(() => "");

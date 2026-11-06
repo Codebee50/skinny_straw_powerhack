@@ -108,7 +108,8 @@ export default function StatusPage() {
           )}
         </div>
         <p className="mt-3 text-sm text-text-subtle">
-          GET <span className="font-mono">{API_URL}/api/health</span>
+          GET <span className="font-mono">{API_URL || "(this site)"}/api/health</span>
+          {!API_URL && " · proxied by the website to the backend on port 8000"}
         </p>
       </section>
     </div>
