@@ -1,0 +1,14 @@
+{
+  "name": "nyiso-congestion-dashboard",
+  "private": true,
+  "description": "NYISO grid congestion dashboard (FastAPI backend + Next.js frontend)",
+  "scripts": {
+    "setup": "node scripts/py.mjs --create-venv && node scripts/py.mjs -m pip install -r backend/requirements.txt && npm --prefix frontend install",
+    "backend": "node scripts/backend.mjs",
+    "frontend": "npm --prefix frontend run dev",
+    "test": "node scripts/py.mjs -m pytest backend -q",
+    "export-fallback": "node scripts/py.mjs backend/scripts/export_fallback.py",
+    "demo": "node scripts/demo.mjs",
+    "demo:dev": "node scripts/demo.mjs --dev"
+  }
+}

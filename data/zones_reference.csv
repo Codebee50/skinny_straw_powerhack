@@ -1,0 +1,12 @@
+zone_letter,zone_name,nyiso_code,column_name,region,representative_city,latitude,longitude
+A,West,WEST,A_west,Upstate,Buffalo,42.886,-78.878
+B,Genesee,GENESE,B_genesee,Upstate,Rochester,43.157,-77.616
+C,Central,CENTRL,C_central,Upstate,Syracuse,43.049,-76.147
+D,North,NORTH,D_north,Upstate,Plattsburgh,44.699,-73.453
+E,Mohawk Valley,MHK VL,E_mohawk_valley,Upstate,Utica,43.1,-75.232
+F,Capital,CAPITL,F_capital,Upstate,Albany,42.653,-73.756
+G,Hudson Valley,HUD VL,G_hudson_valley,Lower Hudson Valley,Poughkeepsie,41.7,-73.921
+H,Millwood,MILLWD,H_millwood,Lower Hudson Valley,Mount Kisco,41.204,-73.727
+I,Dunwoodie,DUNWOD,I_dunwoodie,Lower Hudson Valley,Yonkers,40.931,-73.899
+J,New York City,N.Y.C.,J_new_york_city,New York City,Manhattan,40.713,-74.006
+K,Long Island,LONGIL,K_long_island,Long Island,Hauppauge,40.826,-73.203

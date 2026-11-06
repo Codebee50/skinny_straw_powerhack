@@ -1,0 +1,28 @@
+/* Scoped to .zone-map (the map wrapper in ZoneMapCard). Zone-letter labels are Leaflet permanent
+   tooltips restyled as plain centered text on each circle. */
+.zone-map .leaflet-tooltip.zone-letter {
+  background: transparent;
+  border: 0;
+  box-shadow: none;
+  padding: 0;
+  font-family: var(--font-sans), system-ui, sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 1;
+  pointer-events: none;
+}
+
+.zone-map .leaflet-tooltip.zone-letter::before {
+  display: none;
+}
+
+.zone-map .leaflet-popup-content {
+  font-family: var(--font-sans), system-ui, sans-serif;
+  font-size: 14px;
+  line-height: 1.5;
+  margin: 10px 14px;
+}
+
+.zone-map .leaflet-container {
+  font-family: var(--font-sans), system-ui, sans-serif;
+}
